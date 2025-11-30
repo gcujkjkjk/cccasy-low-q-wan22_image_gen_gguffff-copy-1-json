@@ -1,0 +1,364 @@
+{
+  "input": {
+    "workflow": {
+      "3": {
+        "inputs": {
+          "text": [
+            "80",
+            0
+          ],
+          "clip": [
+            "84",
+            1
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "Positive Prompt"
+        }
+      },
+      "4": {
+        "inputs": {
+          "text": "色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走, censored, sunburnt skin, rashy skin, red cheeks, Standing on bed\n",
+          "clip": [
+            "84",
+            1
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "Negative Prompt"
+        }
+      },
+      "5": {
+        "inputs": {
+          "value": 768
+        },
+        "class_type": "EmptyHunyuanLatentVideo",
+        "_meta": {
+          "title": "EmptyHunyuanLatentVideo"
+        }
+      },
+      "8": {
+        "inputs": {
+          "filename": "wan_2.1_vae.safetensors"
+        },
+        "class_type": "VAELoader",
+        "_meta": {
+          "title": "VAELoader"
+        }
+      },
+      "9": {
+        "inputs": {
+          "samples": [
+            "36",
+            0
+          ],
+          "vae": [
+            "89",
+            0
+          ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+          "title": "VAEDecode"
+        }
+      },
+      "10": {
+        "inputs": {
+          "filename_prefix": "Wan22/image",
+          "images": [
+            "9",
+            0
+          ]
+        },
+        "class_type": "SaveImage",
+        "_meta": {
+          "title": "SaveImage"
+        }
+      },
+      "35": {
+        "inputs": {
+          "text": "enable",
+          "model": [
+            "90",
+            0
+          ],
+          "positive": [
+            "3",
+            0
+          ],
+          "negative": [
+            "4",
+            0
+          ],
+          "latent_image": [
+            "5",
+            0
+          ],
+          "noise_seed": [
+            "92",
+            0
+          ]
+        },
+        "class_type": "KSamplerAdvanced",
+        "_meta": {
+          "title": "KSamplerAdvanced"
+        }
+      },
+      "36": {
+        "inputs": {
+          "text": "enable",
+          "model": [
+            "72",
+            0
+          ],
+          "positive": [
+            "3",
+            0
+          ],
+          "negative": [
+            "4",
+            0
+          ],
+          "latent_image": [
+            "35",
+            0
+          ],
+          "noise_seed": [
+            "92",
+            0
+          ]
+        },
+        "class_type": "KSamplerAdvanced",
+        "_meta": {
+          "title": "KSamplerAdvanced"
+        }
+      },
+      "70": {
+        "inputs": {
+          "filename": "Wan2.2-Lightning_T2V-v1.1-A14B-4steps-lora_HIGH_fp16.safetensors",
+          "model": [
+            "98",
+            0
+          ]
+        },
+        "class_type": "LoraLoaderModelOnly",
+        "_meta": {
+          "title": "LoraLoaderModelOnly"
+        }
+      },
+      "72": {
+        "inputs": {
+          "filename": "Instagirlv2.0_lownoise.safetensors",
+          "model": [
+            "101",
+            0
+          ]
+        },
+        "class_type": "LoraLoaderModelOnly",
+        "_meta": {
+          "title": "LoraLoaderModelOnly"
+        }
+      },
+      "78": {
+        "inputs": {
+          "text": "Casey, Instagirl,"
+        },
+        "class_type": "ttN text",
+        "_meta": {
+          "title": "LoRA Trigger Word"
+        }
+      },
+      "79": {
+        "inputs": {
+          "text": "amateur cellphone quality, artificial over-sharpening, heavy HDR glow, amateur photo, blown-out highlights, crushed shadows\n"
+        },
+        "class_type": "ttN text",
+        "_meta": {
+          "title": "Additional Tags"
+        }
+      },
+      "80": {
+        "inputs": {
+          "text": ", ",
+          "text_a": [
+            "78",
+            0
+          ],
+          "text_b": [
+            "81",
+            0
+          ],
+          "text_c": [
+            "79",
+            0
+          ]
+        },
+        "class_type": "Text Concatenate",
+        "_meta": {
+          "title": "Text Concatenate"
+        }
+      },
+      "81": {
+        "inputs": {
+          "filename": "Instagirl, Casey,full nude skinny, Jenna standing sideways near a tall floor lamp, its soft golden light illuminating one half of her face while the other side falls into gentle shadow. Behind her, the living room is cluttered in a natural, lived-in way: a blanket half-folded on the couch, a stack of opened mail on the coffee table, a pair of headphones resting on an armchair. A diffuser on a shelf releases a faint mist, and several small plants sit by the window, their leaves reflecting the low warm light.\nRealistic, low quality, slightly grainy, subtle blur, soft focus, smartphone photo, Instagram aesthetic, casual snapshot, warm indoor lighting, muted colors, imperfect details, looks like taken by a real person on iPhone, not professional camera."
+        },
+        "class_type": "ttN text",
+        "_meta": {
+          "title": "Positive Prompt"
+        }
+      },
+      "84": {
+        "inputs": {
+          "value": {},
+          "model": [
+            "97",
+            0
+          ],
+          "clip": [
+            "99",
+            0
+          ]
+        },
+        "class_type": "Power Lora Loader (rgthree)",
+        "_meta": {
+          "title": "Power Lora Loader (rgthree)"
+        }
+      },
+      "85": {
+        "inputs": {
+          "text": "High_Model",
+          "MODEL": [
+            "84",
+            0
+          ]
+        },
+        "class_type": "SetNode",
+        "_meta": {
+          "title": "Set_High_Model"
+        }
+      },
+      "86": {
+        "inputs": {
+          "text": "Low_Model",
+          "MODEL": [
+            "72",
+            0
+          ]
+        },
+        "class_type": "SetNode",
+        "_meta": {
+          "title": "Set_Low_Model"
+        }
+      },
+      "87": {
+        "inputs": {
+          "text": "Clip",
+          "CLIP": [
+            "84",
+            1
+          ]
+        },
+        "class_type": "SetNode",
+        "_meta": {
+          "title": "Set_Clip"
+        }
+      },
+      "88": {
+        "inputs": {
+          "text": "VAE",
+          "VAE": [
+            "8",
+            0
+          ]
+        },
+        "class_type": "SetNode",
+        "_meta": {
+          "title": "Set_VAE"
+        }
+      },
+      "89": {
+        "inputs": {
+          "text": "VAE"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_VAE"
+        }
+      },
+      "90": {
+        "inputs": {
+          "text": "High_Model"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_High_Model"
+        }
+      },
+      "92": {
+        "inputs": {
+          "value": 888849332092260
+        },
+        "class_type": "ttN seed",
+        "_meta": {
+          "title": "ttN seed"
+        }
+      },
+      "93": {
+        "inputs": {},
+        "class_type": "Label (rgthree)",
+        "_meta": {
+          "title": "PixelaiLabs.com"
+        }
+      },
+      "94": {
+        "inputs": {},
+        "class_type": "Label (rgthree)",
+        "_meta": {
+          "title": "Wan 2.2 Image Generator (GGUF)"
+        }
+      },
+      "97": {
+        "inputs": {
+          "filename": "Wan2.2-T2V-A14B-LowNoise-Q4_K_M.gguf"
+        },
+        "class_type": "UnetLoaderGGUF",
+        "_meta": {
+          "title": "UnetLoaderGGUF"
+        }
+      },
+      "98": {
+        "inputs": {
+          "filename": "Wan2.2-T2V-A14B-LowNoise-Q4_K_M.gguf"
+        },
+        "class_type": "UnetLoaderGGUF",
+        "_meta": {
+          "title": "UnetLoaderGGUF"
+        }
+      },
+      "99": {
+        "inputs": {
+          "filename": "umt5_xxl_fp16.safetensors"
+        },
+        "class_type": "CLIPLoaderGGUF",
+        "_meta": {
+          "title": "CLIPLoaderGGUF"
+        }
+      },
+      "101": {
+        "inputs": {
+          "filename": "Casey.safetensors",
+          "model": [
+            "70",
+            0
+          ]
+        },
+        "class_type": "LoraLoaderModelOnly",
+        "_meta": {
+          "title": "LoraLoaderModelOnly"
+        }
+      }
+    }
+  }
+}
